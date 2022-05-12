@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cafe.Models;
 
-public class Program
+namespace Cafe.Models
 {
-    public static void Main()
+    public class Program
     {
-        
+        public static void Main()
+        {
+
+        }
     }
 }
