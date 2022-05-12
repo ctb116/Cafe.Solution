@@ -18,5 +18,12 @@ namespace Cafe.Tests
             //Assert
             Assert.AreEqual(5, coffeeOrder.CoffeeCost());
         }
+        [TestMethod]
+        public void CoffeeCost_CostTwoCupNoDiscount_Int()
+        {
+            int coffeeQuantity = 2;
+            Coffee coffeeOrder = new Coffee(coffeeQuantity);
+            Assert.AreEqual(10, coffeeOrder.CoffeeCost());
+        }
     }
 }
