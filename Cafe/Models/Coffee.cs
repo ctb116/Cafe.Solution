@@ -1,15 +1,23 @@
+using System;
+
 namespace Cafe.Models
 {
     public class Coffee
     {
-        public double Price;
-        public double Discount;
-        public int Quantity;
+        private static double _Price = 5;
+        private double _Discount;
+        public int Quantity { get; set; }
+
+        public static double Price
+        {
+            get { return _Price; }
+            set { _Price = value; }
+        }
 
         public Coffee(int quantity)
         {
-            Price = 5;
-            Discount = 0.5;
+            _Price = Price;
+            _Discount = 0.5;
             Quantity = quantity;
         }
 
@@ -24,11 +32,11 @@ namespace Cafe.Models
                 } 
                 else if (index % 3 == 0) 
                 {
-                    coffeeTotal += Price * Discount;
+                    coffeeTotal += _Price * _Discount;
                 }
                 else 
                 {
-                    coffeeTotal += Price;
+                    coffeeTotal += _Price;
                 }
             }
             return coffeeTotal;
