@@ -13,17 +13,27 @@ namespace Cafe.Tests
         {
             //Arrange
             int coffeeQuantity = 1;
+            double coffeeCost = 5;
             //Act
             Coffee coffeeOrder = new Coffee(coffeeQuantity);
             //Assert
-            Assert.AreEqual(5, coffeeOrder.CoffeeCost());
+            Assert.AreEqual(coffeeCost, coffeeOrder.CoffeeCost());
         }
         [TestMethod]
         public void CoffeeCost_CostTwoCupNoDiscount_Int()
         {
             int coffeeQuantity = 2;
+            double coffeeCost = 10;
             Coffee coffeeOrder = new Coffee(coffeeQuantity);
-            Assert.AreEqual(10, coffeeOrder.CoffeeCost());
+            Assert.AreEqual(coffeeCost, coffeeOrder.CoffeeCost());
+        }
+        [TestMethod]
+        public void CoffeeCost_ThirdCupIsDiscounted_Int()
+        {
+            int coffeeQuantity = 3;
+            double cofeeCost = 12.50;
+            Coffee coffeeOrder = new Coffee(coffeeQuantity);
+            Assert.AreEqual(cofeeCost, coffeeOrder.CoffeeCost());
         }
     }
 }
