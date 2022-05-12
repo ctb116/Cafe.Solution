@@ -31,9 +31,17 @@ namespace Cafe.Tests
         public void CoffeeCost_ThirdCupIsDiscounted_Int()
         {
             int coffeeQuantity = 3;
-            double cofeeCost = 12.50;
+            double coffeeCost = 12.50;
             Coffee coffeeOrder = new Coffee(coffeeQuantity);
-            Assert.AreEqual(cofeeCost, coffeeOrder.CoffeeCost());
+            Assert.AreEqual(coffeeCost, coffeeOrder.CoffeeCost());
+        }
+        [TestMethod]
+        public void CoffeeCost_ThirdCupsAreDiscountedSixCupsOrdered_Int()
+        {
+            int coffeeQuantity = 6;
+            double coffeeCost = 25;
+            Coffee coffeeOrder = new Coffee(coffeeQuantity);
+            Assert.AreEqual(coffeeCost, coffeeOrder.CoffeeCost());
         }
     }
 }
